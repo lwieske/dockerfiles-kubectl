@@ -1,4 +1,4 @@
-# Dockerfiles for kubectl / v1.15.0 - v1.15.6
+# Dockerfiles for kubectl / v1.15.0 - v1.15.7
 
 [![](https://images.microbadger.com/badges/image/lwieske/kubectl.svg)](https://microbadger.com/images/lwieske/kubectl "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/version/lwieske/kubectl.svg)](https://microbadger.com/images/lwieske/kubectl "Get your own version badge on microbadger.com")
@@ -11,6 +11,12 @@ docker run -i -t lwieske/kubectl
 ```
 
 ***
+
+### v1.15.7
+
+| Image | Badge |
+| ----- | ----- |
+| lwieske/kubectl:v1.15.7 | [![](https://images.microbadger.com/badges/image/lwieske/kubectl:v1.15.7.svg)](https://microbadger.com/images/lwieske/kubectl:v1.15.7 "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/lwieske/kubectl:v1.15.7.svg)](https://microbadger.com/images/lwieske/kubectl:v1.15.7 "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/commit/lwieske/kubectl:v1.15.7.svg)](https://microbadger.com/images/lwieske/kubectl:v1.15.7 "Get your own commit badge on microbadger.com") |
 
 ### v1.15.6
 
