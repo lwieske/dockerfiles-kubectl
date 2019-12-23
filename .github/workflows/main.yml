@@ -1,0 +1,46 @@
+name: Versions and README for kubectl
+
+on:
+  schedule:
+    - cron:  '37 */3 * * *'
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v2
+        - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+        - name: Installation of gomplate template engine for README.md generation
+          run: |
+            go get github.com/hairyhenderson/gomplate/cmd/gomplate
+        - name: Configuration of git user.name and user.email
+          run: |
+            git config --global user.name ${GITHUB_ACTOR}
+            git config --global user.email ${{ secrets.user_email }}
+        - name: Configuration of git remote
+          run: |
+            git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        - name: Create new kubectl versions
+          run: |
+            for i in $(curl -s https://api.github.com/repos/kubernetes/kubernetes/releases\?page=1\&per_page=100 | jq --raw-output '.[] | select(.prerelease == false) | select((.name | startswith("v1.15.")) or (.name | startswith("v1.16.")) or (.name | startswith("v1.17."))) | .name' | sort)
+            do
+              if [ ! -e versions/${i} ]; then
+                # generate new version file in versions directory, e.g. ./versions/v1.16.3
+                touch versions/${i}
+                # generate updated README.md
+                echo "["$i" "`git tag | sort -r`"]" |\
+                  sed 's/ /\", \"/g' |\
+                  sed 's/\(\[\)/\1 \"/g' |\
+                  sed 's/\(\]\)/\" \1/g' |\
+                  $HOME/go/bin/gomplate -f tmpl/README.md -o README.md --datasource 'versions=stdin:?type=application/array%2Bjson'
+                # commit and tag new version
+                git add versions/${i}
+                git add README.md
+                git commit -a -m "Commit ${i}"
+                git tag "${i}"
+                git push origin master
+                git push origin --tags
+                # trigger docker build
+                curl -H Content-Type:application/json --data "{\"source_type\":\"Tag\", \"source_name\":\"${i}\"}" -X POST ${{ secrets.trigger_url }}
+              fi
+            done

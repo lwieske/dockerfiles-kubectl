@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+############
+# hooks/test
+############
+
+echo "[**********************]"
+echo "[***] Test hook running "
+echo "[**********************]"
+
+echo
+echo "*** check kubectl version"
+echo
+
+if [[ "`docker run index.docker.io/lwieske/kubectl:${DOCKER_TAG} --client=true --short=true version`" == "Client Version: ${DOCKER_TAG}" ]]; then
+    echo "OK!"
+    exit 0;
+else
+    echo "FAILED!"
+    exit 1;
+fi
