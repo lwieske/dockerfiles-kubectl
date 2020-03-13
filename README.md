@@ -1,4 +1,4 @@
-# Dockerfiles for kubectl / v1.15.0 - v1.15.11
+# Dockerfiles for kubectl / v1.15.0 - v1.16.8
 
 [![](https://images.microbadger.com/badges/image/lwieske/kubectl.svg)](https://microbadger.com/images/lwieske/kubectl "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/version/lwieske/kubectl.svg)](https://microbadger.com/images/lwieske/kubectl "Get your own version badge on microbadger.com")
@@ -12,11 +12,11 @@ docker run -i -t lwieske/kubectl
 
 ***
 
-### v1.15.11
+### v1.16.8
 
 | Image | Badge |
 | ----- | ----- |
-| lwieske/kubectl:v1.15.11 | [![](https://images.microbadger.com/badges/image/lwieske/kubectl:v1.15.11.svg)](https://microbadger.com/images/lwieske/kubectl:v1.15.11 "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/lwieske/kubectl:v1.15.11.svg)](https://microbadger.com/images/lwieske/kubectl:v1.15.11 "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/commit/lwieske/kubectl:v1.15.11.svg)](https://microbadger.com/images/lwieske/kubectl:v1.15.11 "Get your own commit badge on microbadger.com") |
+| lwieske/kubectl:v1.16.8 | [![](https://images.microbadger.com/badges/image/lwieske/kubectl:v1.16.8.svg)](https://microbadger.com/images/lwieske/kubectl:v1.16.8 "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/lwieske/kubectl:v1.16.8.svg)](https://microbadger.com/images/lwieske/kubectl:v1.16.8 "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/commit/lwieske/kubectl:v1.16.8.svg)](https://microbadger.com/images/lwieske/kubectl:v1.16.8 "Get your own commit badge on microbadger.com") |
 
 ### v1.17.3
 
@@ -137,6 +137,12 @@ docker run -i -t lwieske/kubectl
 | Image | Badge |
 | ----- | ----- |
 | lwieske/kubectl:v1.15.2 | [![](https://images.microbadger.com/badges/image/lwieske/kubectl:v1.15.2.svg)](https://microbadger.com/images/lwieske/kubectl:v1.15.2 "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/lwieske/kubectl:v1.15.2.svg)](https://microbadger.com/images/lwieske/kubectl:v1.15.2 "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/commit/lwieske/kubectl:v1.15.2.svg)](https://microbadger.com/images/lwieske/kubectl:v1.15.2 "Get your own commit badge on microbadger.com") |
+
+### v1.15.11
+
+| Image | Badge |
+| ----- | ----- |
+| lwieske/kubectl:v1.15.11 | [![](https://images.microbadger.com/badges/image/lwieske/kubectl:v1.15.11.svg)](https://microbadger.com/images/lwieske/kubectl:v1.15.11 "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/lwieske/kubectl:v1.15.11.svg)](https://microbadger.com/images/lwieske/kubectl:v1.15.11 "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/commit/lwieske/kubectl:v1.15.11.svg)](https://microbadger.com/images/lwieske/kubectl:v1.15.11 "Get your own commit badge on microbadger.com") |
 
 ### v1.15.10
 
